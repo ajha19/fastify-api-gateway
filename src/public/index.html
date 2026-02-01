@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fastify API Gateway</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Fastify API Gateway</h1>
+      <p style="color: var(--text-secondary);">Production-ready Gateway Dashboard</p>
+    </header>
+
+    <div class="grid">
+      <div class="card">
+        <h2>Gateway Status</h2>
+        <div style="display: flex; align-items: center; justify-content: space-between;">
+          <span id="health-status">Unknown</span>
+          <span class="status-indicator" id="health-indicator"></span>
+        </div>
+        <button onclick="checkHealth()" style="margin-top: 1rem;">Check Health</button>
+      </div>
+
+      <div class="card">
+        <h2>Upstream Proxy</h2>
+        <p style="font-size: 0.8rem; color: var(--text-secondary);">Test request forwarding</p>
+        <button onclick="testProxyFast()" style="margin-top: 0.5rem;">Test Fast Endpoint</button>
+      </div>
+
+      <div class="card">
+        <h2>Timeout Handling</h2>
+        <p style="font-size: 0.8rem; color: var(--text-secondary);">Test upstream timeout (2s)</p>
+        <button onclick="testProxySlow()" style="margin-top: 0.5rem; --btn-bg: #8b949e;">Test Slow Endpoint</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Response Log</h2>
+      <div id="response-area">
+        <div style="color: var(--text-secondary); text-align: center; margin-top: 4rem;">
+          Click actions above to see responses here...
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
